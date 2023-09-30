@@ -1,5 +1,5 @@
 {% set name = "aurora" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 
 
 package:
@@ -21,9 +21,6 @@ requirements:
     - pytest-runner
     - python >=3.8
   run:
-    - dask
-    - deprecated
-    - fortranformat
     - matplotlib-base
     - mt-metadata
     - mth5
