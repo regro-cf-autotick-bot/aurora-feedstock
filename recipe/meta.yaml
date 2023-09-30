@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aurora-{{ version }}.tar.gz
-  sha256: 45d5f1608d41e61f3e46776b5dd4156de78c67f4b37b2909f6d2b02c27cd2b1e
+  sha256: 01fca52621c41361dde5d177662d7768ff355190c32136a11eaad46656e430b3 
 
 build:
   number: 0
