@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aurora-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aurora-{{ version }}.tar.gz
   sha256: 503bb096373e3b09ffea71137143ffc80268a31ce350a980451fb062f2c441f4
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -19,7 +19,7 @@ requirements:
   host:
     - pip
     - pytest-runner
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - matplotlib-base
     - mt-metadata
@@ -30,7 +30,7 @@ requirements:
     - obspy
     - pandas ==1.4.4
     - psutil
-    - python >=3.8
+    - python >={{ python_min }}
     - scipy
     - xarray
 
@@ -41,6 +41,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/simpeg/aurora
