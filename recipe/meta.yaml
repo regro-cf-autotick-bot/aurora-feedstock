@@ -1,5 +1,6 @@
 {% set name = "aurora" %}
 {% set version = "0.6.1" %}
+{% set python_min = "3.11" %}
 
 
 package:
@@ -18,21 +19,22 @@ build:
 requirements:
   host:
     - pip
+    - setuptools
     - pytest-runner
-    - python >=3.8
+    - python {{ python_min }}
+    - xarray >=2024.10.0
   run:
     - matplotlib-base
     - mt-metadata
     - mth5
-    - mtpy-v2
     - numba
     - numpy
     - obspy
-    - pandas ==1.4.4
+    - pandas
     - psutil
-    - python >=3.8
+    - python >={{ python_min }}
     - scipy
-    - xarray
+    - xarray >=2024.10.0
 
 test:
   imports:
@@ -40,7 +42,9 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
+    - xarray >=2024.10.0
 
 about:
   home: https://github.com/simpeg/aurora
